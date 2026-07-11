@@ -4,7 +4,6 @@ let ultimoCodigo = "";
 
 const resultado = document.getElementById("resultado");
 
-data.codigo = codigo;
 function mostrarProducto(data){
 
     if(!data.encontrado){
@@ -22,10 +21,8 @@ function mostrarProducto(data){
         <h3>✅ Producto encontrado</h3>
 
         <p><b>Código escaneado</b><br>${data.codigo}</p>
-
         <p><b>SKU</b><br>${data.sku}</p>
         <p><b>Número de Parte</b><br>${data.numeroparte}</p>
-
         <p><b>Descripción</b><br>${data.descripcion}</p>
     `;
 
@@ -40,7 +37,7 @@ async function buscarCodigo(codigo){
         );
 
         const data = await respuesta.json();
-
+        data.codigo = codigo;
         mostrarProducto(data);
 
     }
