@@ -25,13 +25,14 @@ function mostrarProducto(data){
         <p><b>Número de Parte</b><br>${data.numeroparte}</p>
         <p><b>Descripción</b><br>${data.descripcion}</p>
     `;
+    /*
     JsBarcode("#barcodeSKU", data.sku, {
     format: "CODE128",
     displayValue: true,
     width: 2,
     height: 70
-});
-
+    });
+    */
 }
 
 async function buscarCodigo(codigo){
