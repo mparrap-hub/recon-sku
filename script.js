@@ -65,13 +65,11 @@ function iniciarCamara(){
     {
         fps: 10,
         aspectRatio: 1.777,   // 16:9
-        qrbox: function(viewfinderWidth, viewfinderHeight){
-            const ancho = Math.min(viewfinderWidth * 0.7, 220);
-            return {
-                width: ancho,
-                height: ancho * 0.4
-            };
-        }
+        qrbox: {
+                width: 200,
+                height: 100
+            }
+        
     },
         (decodedText)=>{
             if(decodedText === ultimoCodigo){
