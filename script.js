@@ -59,16 +59,20 @@ function iniciarCamara(){
 
     const html5QrCode = new Html5Qrcode("reader");
     html5QrCode.start(
-        { 
-            facingMode: "environment"
-        },
-        {
-            fps:10,
-            qrbox:{
-                width:160,
-                height:70
-            }
-        },
+
+    { facingMode: "environment" },
+
+    {
+        fps: 10,
+        aspectRatio: 1.777,   // 16:9
+        qrbox: function(viewfinderWidth, viewfinderHeight){
+            const ancho = Math.min(viewfinderWidth * 0.7, 220);
+            return {
+                width: ancho,
+                height: ancho * 0.4
+            };
+        }
+    },
         (decodedText)=>{
             if(decodedText === ultimoCodigo){
                 return;
