@@ -35,11 +35,10 @@ body{
 }
 
 .logo{
-
-    width:55px;
-
-    height:auto;
-
+    width:35px;
+    height:35px;
+    object-fit:contain;
+    flex-shrink:0;
 }
 
 h2{
