@@ -65,9 +65,8 @@ function iniciarCamara(){
         {
             fps:10,
             qrbox:{
-                width:250,
-
-                height:120
+                width:160,
+                height:70
             }
         },
         (decodedText)=>{
