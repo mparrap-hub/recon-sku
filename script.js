@@ -4,6 +4,7 @@ let ultimoCodigo = "";
 
 const resultado = document.getElementById("resultado");
 
+
 function mostrarProducto(data){
 
     if(!data.encontrado){
@@ -12,102 +13,100 @@ function mostrarProducto(data){
             <h3>❌ No encontrado</h3>
             <p>El código no existe.</p>
         `;
-
         return;
-
     }
-
     resultado.innerHTML = `
+
         <h3>✅ Producto encontrado</h3>
 
-        <p><b>Código escaneado</b><br>${data.codigo}</p>
-        <p><b>SKU</b><br>${data.sku}</p>
-        <p><b>Número de Parte</b><br>${data.numeroparte}</p>
-        <p><b>Descripción</b><br>${data.descripcion}</p>
+        <p><b>Código escaneado</b><br>
+        ${data.codigo}</p>
+        <p><b>SKU</b><br>
+        ${data.sku}</p>
+        <svg id="barcodeSKU"></svg>
+        <p><b>Número de Parte</b><br>
+        ${data.numeroparte}</p>
+        <p><b>Descripción</b><br>
+        ${data.descripcion}</p>
     `;
-    /*
-    JsBarcode("#barcodeSKU", data.sku, {
-    format: "CODE128",
-    displayValue: true,
-    width: 2,
-    height: 70
-    });
-    */
-try {
+    try {
+        JsBarcode("#barcodeSKU", data.sku, {
+            format: "CODE128",
+            displayValue: true,
+            width: 2,
+            height: 70
+        });
 
-    JsBarcode("#barcodeSKU", data.sku, {
-        format: "CODE128",
-        displayValue: true,
-        width: 2,
-        height: 70
-    });
-
+    }
+    catch(e){
+        console.log("Error código barra:", e);
+    }
 }
-catch(e){
-
-    console.log("Error código barra:", e);
-
-
-    
-}
-
 async function buscarCodigo(codigo){
-
     try{
-
         const respuesta = await fetch(
-            `${API_URL}?codigo=${encodeURIComponent(codigo)}`
-              {
-                method: "GET"
-              }
-        );
 
+            `${API_URL}?codigo=${encodeURIComponent(codigo)}`,
+            {
+                method: "GET"
+            }
+        );
         const data = await respuesta.json();
         data.codigo = codigo;
         mostrarProducto(data);
-
     }
-
     catch(error){
-
         resultado.innerHTML = `
             <h3>⚠️ Error</h3>
-            <p>No fue posible consultar Google Sheets.</p>
+            <p>${error.message}</p>
         `;
-
-        console.error(error);
-
+        console.error("Error consulta:", error);
     }
-
 }
 
 function iniciarCamara(){
 
     const html5QrCode = new Html5Qrcode("reader");
-
     html5QrCode.start(
 
-        { facingMode: "environment" },
+        { 
+            facingMode: "environment"
+        },
+
 
         {
             fps:10,
-            qrbox:{width:250,height:120}
+            qrbox:{
+                width:250,
+
+                height:120
+            }
+
         },
 
         (decodedText)=>{
 
-            if(decodedText===ultimoCodigo){
+            if(decodedText === ultimoCodigo){
+
                 return;
+
             }
 
-            ultimoCodigo=decodedText;
-
+            ultimoCodigo = decodedText;
             buscarCodigo(decodedText);
-
         }
+    )
+    .catch(error=>{
 
-    ).catch(console.error);
+        console.error("Error cámara:", error);
 
+        resultado.innerHTML = `
+
+            <h3>⚠️ Error cámara</h3>
+
+            <p>${error}</p>
+        `;
+    });
 }
 
 iniciarCamara();
