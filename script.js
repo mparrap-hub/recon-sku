@@ -57,6 +57,9 @@ async function buscarCodigo(codigo){
 
         const respuesta = await fetch(
             `${API_URL}?codigo=${encodeURIComponent(codigo)}`
+              {
+                method: "GET"
+              }
         );
 
         const data = await respuesta.json();
