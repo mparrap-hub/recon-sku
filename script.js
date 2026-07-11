@@ -68,8 +68,8 @@ function iniciarCamara(){
         qrbox: function(viewfinderWidth, viewfinderHeight) {
 
     return {
-        width: viewfinderWidth - 20,
-        height: viewfinderHeight - 20
+        width: viewfinderWidth - 10,
+        height: viewfinderHeight - 10
     };
 
 }
