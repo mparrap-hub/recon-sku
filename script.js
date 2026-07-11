@@ -69,7 +69,7 @@ function iniciarCamara(){
 
     return {
         width: viewfinderWidth - 10,
-        height: viewfinderHeight - 10
+        height: viewfinderHeight *0.5
     };
 
 }
