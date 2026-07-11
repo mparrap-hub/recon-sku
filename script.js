@@ -13,9 +13,9 @@ function mostrarProducto(data){
     }
     resultado.innerHTML = `
         <h3>✅ Producto encontrado</h3>
-        <p><b>Código escaneado</b><br>
+        <p><b>Código escaneado (fabricante)</b><br>
         ${data.codigo}</p>
-        <p><b>SKU</b><br>
+        <p><b>Código Geodrill</b><br>
         ${data.sku}</p>
         <svg id="barcodeSKU"></svg>
         <p><b>Número de Parte</b><br>
