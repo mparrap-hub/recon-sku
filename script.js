@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbzQUXHHtwlA5FIOfhAnsJNRil0hU41HLiQzzZqQAsOOBmvOuQW2eafp5QWaMwEINc6b/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbwj1rZY_nhRV5rjOubm1kzo1cdYZEznOp2Sx_4IIvAxGBHWqU6bxaS7-cpWRSpCnxHx/exec";
 
 let ultimoCodigo = "";
 
