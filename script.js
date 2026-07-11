@@ -4,6 +4,7 @@ let ultimoCodigo = "";
 
 const resultado = document.getElementById("resultado");
 
+data.codigo = codigo;
 function mostrarProducto(data){
 
     if(!data.encontrado){
