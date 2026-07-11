@@ -33,6 +33,22 @@ function mostrarProducto(data){
     height: 70
     });
     */
+try {
+
+    JsBarcode("#barcodeSKU", data.sku, {
+        format: "CODE128",
+        displayValue: true,
+        width: 2,
+        height: 70
+    });
+
+}
+catch(e){
+
+    console.log("Error código barra:", e);
+
+
+    
 }
 
 async function buscarCodigo(codigo){
