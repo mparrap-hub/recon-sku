@@ -50,19 +50,16 @@ h2{
 }
 
 #reader{
-
-    width:100%;
-
-    max-width:320px;
-
-    margin:10px auto 15px auto;
-
+    width:280px !important;
+    margin:0 auto 15px auto;
+    border:none !important;
 }
 
-#reader video{
-
+#reader video,
+#reader canvas{
+    max-width:280px !important;
+    max-height:180px !important;
     border-radius:10px;
-
 }
 
 #resultado{
