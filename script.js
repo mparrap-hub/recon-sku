@@ -20,8 +20,9 @@ function mostrarProducto(data){
     resultado.innerHTML = `
         <h3>✅ Producto encontrado</h3>
 
-        <p><b>SKU</b><br>${data.sku}</p>
+        <p><b>Código escaneado</b><br>${data.codigo}</p>
 
+        <p><b>SKU</b><br>${data.sku}</p>
         <p><b>Número de Parte</b><br>${data.numeroparte}</p>
 
         <p><b>Descripción</b><br>${data.descripcion}</p>
