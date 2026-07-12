@@ -117,3 +117,60 @@ h2{
     border-radius:12px;
 
 }
+
+.camera-container{
+
+    position:relative;
+
+    width:280px;
+
+    margin:0 auto;
+
+}
+
+#reader{
+
+    width:280px !important;
+
+    border:none !important;
+
+}
+
+#reader video,
+#reader canvas{
+
+    width:100% !important;
+
+    height:auto !important;
+
+    border-radius:12px;
+
+}
+
+.scan-line{
+
+    position:absolute;
+
+    left:8%;
+
+    width:84%;
+
+    height:4px;
+
+    background:#00ff55;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border-radius:10px;
+
+    box-shadow:
+        0 0 8px #00ff55,
+        0 0 18px #00ff55;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
