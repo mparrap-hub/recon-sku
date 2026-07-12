@@ -94,6 +94,7 @@ function iniciarCamara(){
 
         }
     },
+
     (decodedText)=>{
 
     if(!puedeEscanear){
@@ -103,13 +104,18 @@ function iniciarCamara(){
     puedeEscanear = false;
     ultimoCodigo = decodedText;
 
-    html5QrCode.stop().then(() => {
+    // Pausa la cámara
+    html5QrCode.pause(true);
 
-        document.getElementById("reader").style.display = "none";
+    // Opcional: oculta la cámara
+    document.getElementById("reader").style.display = "none";
 
-        buscarCodigo(decodedText);
+    buscarCodigo(decodedText);
 
-    }).catch(err => {
+}
+
+        
+        ).catch(err => {
 
         console.error(err);
 
@@ -130,17 +136,20 @@ function iniciarCamara(){
 }
 
 function limpiarResultado(){
-    
+
     ultimoCodigo = "";
     puedeEscanear = true;
-    document.getElementById("reader").style.display = "block";
 
     resultado.innerHTML = `
         <p class="espera">
             Escanee un código de barras del fabricante
         </p>
     `;
-    iniciarCamara();
+
+    document.getElementById("reader").style.display = "block";
+
+    html5QrCode.resume();
+
 }
 
 iniciarCamara();
