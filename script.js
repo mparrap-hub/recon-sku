@@ -42,7 +42,7 @@ resultado.innerHTML = `
             format: "CODE128",
             displayValue: true,
             textPosition: "top",
-            fontSize: 16,
+            fontSize: 18,
             margin: 2,
             width: 2,
             height: 60
