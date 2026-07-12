@@ -63,17 +63,15 @@ function iniciarCamara(){
     { facingMode: "environment" },
 
     {
-        fps: 10,
-        aspectRatio: 1.777,   // 16:9
-        qrbox: function(viewfinderWidth, viewfinderHeight) {
+    fps: 10,
+    aspectRatio: 16 / 9,
+    qrbox: function(viewfinderWidth, viewfinderHeight) {
+        return {
+            width: viewfinderWidth * 0.90,
+            height: 70
+        };
 
-    return {
-        width: viewfinderWidth - 10,
-        height: viewfinderHeight *0.5
-    };
-
-}
-        
+        }
     },
         (decodedText)=>{
             if(decodedText === ultimoCodigo){
