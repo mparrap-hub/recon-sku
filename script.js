@@ -41,6 +41,9 @@ resultado.innerHTML = `
         JsBarcode("#barcodeSKU", data.sku, {
             format: "CODE128",
             displayValue: true,
+            textPosition: "top",
+            fontSize: 10,
+            margin: 2,
             width: 2,
             height: 70
         });
