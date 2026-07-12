@@ -174,3 +174,31 @@ h2{
     z-index:999;
 
 }
+
+@keyframes scanner{
+
+    0%{
+
+        top:30%;
+
+    }
+
+    50%{
+
+        top:70%;
+
+    }
+
+    100%{
+
+        top:30%;
+
+    }
+
+}
+
+.scan-line{
+
+    animation:scanner 2.5s ease-in-out infinite;
+
+}
