@@ -12,18 +12,31 @@ function mostrarProducto(data){
         `;
         return;
     }
-    resultado.innerHTML = `
-        <h3>✅ Producto encontrado</h3>
-        <p><b>Código escaneado (fabricante)</b><br>
-        ${data.codigo}</p>
-        <p><b>Código Geodrill</b><br>
-        ${data.sku}</p>
-        <svg id="barcodeSKU"></svg>
-        <p><b>Número de Parte</b><br>
-        ${data.numeroparte}</p>
-        <p><b>Descripción</b><br>
-        ${data.descripcion}</p>
-    `;
+puedeEscanear = false;
+
+resultado.innerHTML = `
+
+    <button class="btn-limpiar" onclick="limpiarResultado()">
+    🔄 Nueva consulta
+    </button>
+
+    <h3>✅ Producto encontrado</h3>
+
+    <p><b>Código escaneado (fabricante)</b><br>
+    ${data.codigo}</p>
+
+    <p><b>Código Geodrill</b><br>
+    ${data.sku}</p>
+
+    <svg id="barcodeSKU"></svg>
+
+    <p><b>Número de Parte</b><br>
+    ${data.numeroparte}</p>
+
+    <p><b>Descripción</b><br>
+    ${data.descripcion}</p>
+
+`;
     try {
         JsBarcode("#barcodeSKU", data.sku, {
             format: "CODE128",
