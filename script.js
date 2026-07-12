@@ -1,5 +1,5 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbwj1rZY_nhRV5rjOubm1kzo1cdYZEznOp2Sx_4IIvAxGBHWqU6bxaS7-cpWRSpCnxHx/exec";
-
+let html5QrCode;
 let ultimoCodigo = "";
 let puedeEscanear = true;
 const resultado = document.getElementById("resultado");
@@ -75,8 +75,10 @@ async function buscarCodigo(codigo){
 }
 
 function iniciarCamara(){
-
-    const html5QrCode = new Html5Qrcode("reader");
+    if(html5QrCode){
+        html5QrCode.clear().catch(()=>{});
+    }
+    html5QrCode = new Html5Qrcode("reader");
     html5QrCode.start(
 
     { facingMode: "environment" },
@@ -97,10 +99,24 @@ function iniciarCamara(){
     if(!puedeEscanear){
         return;
     }
+
     puedeEscanear = false;
     ultimoCodigo = decodedText;
 
-    buscarCodigo(decodedText);
+    html5QrCode.stop().then(() => {
+
+        document.getElementById("reader").style.display = "none";
+
+        buscarCodigo(decodedText);
+
+    }).catch(err => {
+
+        console.error(err);
+
+        buscarCodigo(decodedText);
+
+    });
+
 }
     )
     .catch(error=>{
@@ -114,17 +130,17 @@ function iniciarCamara(){
 }
 
 function limpiarResultado(){
-
+    
     ultimoCodigo = "";
-
     puedeEscanear = true;
+    document.getElementById("reader").style.display = "block";
 
     resultado.innerHTML = `
         <p class="espera">
             Escanee un código de barras del fabricante
         </p>
     `;
-
+    iniciarCamara();
 }
 
 iniciarCamara();
