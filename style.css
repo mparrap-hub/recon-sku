@@ -197,6 +197,44 @@ h2{
 
 }
 
+.btn-limpiar{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:18px;
+
+    background:#204691;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.btn-limpiar:hover{
+
+    background:#17366f;
+
+}
+
+.btn-limpiar:active{
+
+    transform:scale(.98);
+
+}
+
 .scan-line{
 
     animation:scanner 2.5s ease-in-out infinite;
