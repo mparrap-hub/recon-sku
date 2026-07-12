@@ -42,10 +42,10 @@ resultado.innerHTML = `
             format: "CODE128",
             displayValue: true,
             textPosition: "top",
-            fontSize: 10,
+            fontSize: 16,
             margin: 2,
             width: 2,
-            height: 70
+            height: 60
         });
 
     }
