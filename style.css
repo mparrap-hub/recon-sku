@@ -206,7 +206,7 @@ h2{
 
     padding:12px;
 
-    margin-bottom:18px;
+    margin-bottom:5px;
 
     background:#204691;
 
@@ -241,5 +241,13 @@ h2{
 .scan-line{
 
     animation:scanner 2.5s ease-in-out infinite;
+
+}
+
+#resultado h3{
+
+    margin-top:0;
+    margin-bottom:10px;
+    color:#1f7a1f;
 
 }
