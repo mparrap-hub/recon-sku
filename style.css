@@ -101,3 +101,19 @@ h2{
     color:#777;
 
 }
+
+#reader__dashboard{
+    display:none !important;
+}
+
+#reader{
+    border:none !important;
+}
+
+#reader video,
+#reader canvas{
+    width:100% !important;
+    height:auto !important;
+    border-radius:12px;
+
+}
