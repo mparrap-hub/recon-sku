@@ -43,7 +43,7 @@ resultado.innerHTML = `
             displayValue: true,
             textPosition: "top",
             fontSize: 18,
-            margin: 2,
+            margin: 3,
             width: 2,
             height: 60
         });
