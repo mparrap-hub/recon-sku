@@ -87,13 +87,21 @@ function iniciarCamara(){
 
         }
     },
-        (decodedText)=>{
-            if(decodedText === ultimoCodigo){
-                return;
-            }
-            ultimoCodigo = decodedText;
-            buscarCodigo(decodedText);
-        }
+    (decodedText)=>{
+
+    if(!puedeEscanear){
+        return;
+    }
+
+    if(decodedText === ultimoCodigo){
+        return;
+    }
+
+    ultimoCodigo = decodedText;
+
+    buscarCodigo(decodedText);
+
+}
     )
     .catch(error=>{
         console.error("Error cámara:", error);
