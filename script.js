@@ -1,6 +1,7 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbwj1rZY_nhRV5rjOubm1kzo1cdYZEznOp2Sx_4IIvAxGBHWqU6bxaS7-cpWRSpCnxHx/exec";
 
 let ultimoCodigo = "";
+let puedeEscanear = true;
 const resultado = document.getElementById("resultado");
 function mostrarProducto(data){
     if(!data.encontrado){
