@@ -105,4 +105,18 @@ function iniciarCamara(){
     });
 }
 
+function limpiarResultado(){
+
+    ultimoCodigo = "";
+
+    puedeEscanear = true;
+
+    resultado.innerHTML = `
+        <p class="espera">
+            Escanee un código de barras del fabricante
+        </p>
+    `;
+
+}
+
 iniciarCamara();
