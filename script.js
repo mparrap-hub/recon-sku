@@ -35,8 +35,8 @@ function mostrarProducto(data){
         <button class="btn-limpiar" onclick="limpiarResultado()">
             🔄 Nueva consulta
         </button>
-
-        <h3 style="color:#2e7d32;">✅ Producto encontrado</h3>
+        
+        <h3 style="color:#2E7D32;">✅ Producto encontrado</h3>
 
         <p><b>Código escaneado (fabricante)</b><br>
         ${data.codigo}</p>
