@@ -158,6 +158,12 @@ function iniciarCamara(){
 
                 document.querySelector(".camera-container").style.display = "none";
 
+                resultado.innerHTML = `
+                    <p class="espera">
+                        ⏳ Buscando código...
+                    </p>
+                `;
+
                 buscarCodigo(decodedText);
 
             })
