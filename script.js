@@ -112,7 +112,7 @@ async function buscarCodigo(codigo){
 
 function iniciarCamara(){
 
-    document.getElementById("reader").style.display = "block";
+    document.querySelector(".camera-container").style.display = "block";
 
     html5QrCode = new Html5Qrcode("reader");
 
@@ -156,7 +156,7 @@ function iniciarCamara(){
 
             .then(()=>{
 
-                document.getElementById("reader").style.display="none";
+                document.querySelector(".camera-container").style.display = "none";
 
                 buscarCodigo(decodedText);
 
