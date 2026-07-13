@@ -10,18 +10,24 @@ function mostrarProducto(data){
 
     if(!data.encontrado){
 
-        resultado.innerHTML = `
-            <button class="btn-limpiar" onclick="limpiarResultado()">
-                🔄 Nueva consulta
-            </button>
+    resultado.innerHTML = `
+        <button class="btn-limpiar" onclick="limpiarResultado()">
+            🔄 Nueva consulta
+        </button>
 
-            <h3>❌ Producto no encontrado</h3>
+        <h3 style="color:#c62828;">❌ Producto no encontrado</h3>
 
-            <p>El código de fabricante no está registrado.</p>
-        `;
+        <p>
+            <b>Código escaneado</b><br>
+            ${data.codigo}
+        </p>
 
-        return;
+        <p>
+            El código de fabricante no está registrado.
+        </p>
+    `;
 
+    return;
     }
 
     resultado.innerHTML = `
